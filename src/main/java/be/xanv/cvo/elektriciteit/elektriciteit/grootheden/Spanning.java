@@ -1,14 +1,14 @@
 package be.xanv.cvo.elektriciteit.elektriciteit.grootheden;
 
-public class Volt {
+public class Spanning {
     private double volt;
 
-    private Volt(double volt) {
+    private Spanning(double volt) {
         this.volt = volt;
     }
 
-    public static Volt createVoltFrom(double volt) {
-        return new Volt(volt);
+    public static Spanning createSpanningFrom(double volt) {
+        return new Spanning(volt);
     }
 
     public double getVolt() {
