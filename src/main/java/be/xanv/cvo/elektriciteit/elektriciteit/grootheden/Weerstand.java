@@ -1,4 +1,4 @@
-package be.xanv.cvo.elektriciteit.elektriciteit.eenheden;
+package be.xanv.cvo.elektriciteit.elektriciteit.grootheden;
 
 public class Weerstand {
     private double weerstand;
