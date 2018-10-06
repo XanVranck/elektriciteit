@@ -1,9 +1,9 @@
-package be.xanv.cvo.elektriciteit.elektriciteit.wetvanohm;
+package be.xanv.cvo.elektriciteit.elektriciteit.berekeningen.wetvanohm;
 
-import be.xanv.cvo.elektriciteit.elektriciteit.wetvanohm.dto.GroothedenDTO;
-import be.xanv.cvo.elektriciteit.elektriciteit.wetvanohm.dto.SpanningDTO;
-import be.xanv.cvo.elektriciteit.elektriciteit.wetvanohm.dto.StroomDTO;
-import be.xanv.cvo.elektriciteit.elektriciteit.wetvanohm.dto.WeerstandDTO;
+import be.xanv.cvo.elektriciteit.elektriciteit.berekeningen.wetvanohm.dto.GroothedenDTO;
+import be.xanv.cvo.elektriciteit.elektriciteit.berekeningen.wetvanohm.dto.SpanningDTO;
+import be.xanv.cvo.elektriciteit.elektriciteit.berekeningen.wetvanohm.dto.StroomDTO;
+import be.xanv.cvo.elektriciteit.elektriciteit.berekeningen.wetvanohm.dto.WeerstandDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;

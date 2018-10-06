@@ -1,4 +1,4 @@
-package be.xanv.cvo.elektriciteit.elektriciteit.wetvanohm.dto;
+package be.xanv.cvo.elektriciteit.elektriciteit.berekeningen.wetvanohm.dto;
 
 import be.xanv.cvo.elektriciteit.elektriciteit.grootheden.Spanning;
 import be.xanv.cvo.elektriciteit.elektriciteit.grootheden.Stroom;

@@ -1,4 +1,4 @@
-package be.xanv.cvo.elektriciteit.elektriciteit.wetvanohm;
+package be.xanv.cvo.elektriciteit.elektriciteit.berekeningen.wetvanohm;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;

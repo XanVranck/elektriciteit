@@ -1,4 +1,4 @@
-package be.xanv.cvo.elektriciteit.elektriciteit.wetvanohm.dto;
+package be.xanv.cvo.elektriciteit.elektriciteit.berekeningen.wetvanohm.dto;
 
 public class StroomDTO {
     private double ampere;
