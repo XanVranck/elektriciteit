@@ -1,4 +1,4 @@
-package be.xanv.cvo.elektriciteit.elektriciteit.berekeningen.wetvanohm.dto;
+package be.xanv.cvo.elektriciteit.elektriciteit.berekeningen.dto;
 
 public class GroothedenDTO {
     private SpanningDTO spanning;

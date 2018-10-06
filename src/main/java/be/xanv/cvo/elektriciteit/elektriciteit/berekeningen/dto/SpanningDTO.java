@@ -1,4 +1,4 @@
-package be.xanv.cvo.elektriciteit.elektriciteit.berekeningen.wetvanohm.dto;
+package be.xanv.cvo.elektriciteit.elektriciteit.berekeningen.dto;
 
 import java.io.Serializable;
 
