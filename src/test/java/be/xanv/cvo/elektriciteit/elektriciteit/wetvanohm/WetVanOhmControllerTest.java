@@ -35,10 +35,11 @@ public class WetVanOhmControllerTest {
         String expected = "{\"volt\":20.0}";
 
         this.mockMvc
-                .perform(post("/wetvanohm/volt")
+                .perform(
+                        post("/wetvanohm/volt")
                         .contentType(APPLICATION_JSON)
-                        .content(json))
-                .andDo(print())
+                        .content(json)
+                ).andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(content().string(expected));
     }
@@ -49,10 +50,11 @@ public class WetVanOhmControllerTest {
         String expected = "{\"ampere\":5.0}";
 
         this.mockMvc
-                .perform(post("/wetvanohm/ampere")
+                .perform(
+                        post("/wetvanohm/ampere")
                         .contentType(APPLICATION_JSON)
-                        .content(json))
-                .andDo(print())
+                        .content(json)
+                ).andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(content().string(expected));
     }
@@ -63,10 +65,11 @@ public class WetVanOhmControllerTest {
         String expected = "{\"ohm\":4.0}";
 
         this.mockMvc
-                .perform(post("/wetvanohm/ohm")
+                .perform(
+                        post("/wetvanohm/ohm")
                         .contentType(APPLICATION_JSON)
-                        .content(json))
-                .andDo(print())
+                        .content(json)
+                ).andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(content().string(expected));
     }
