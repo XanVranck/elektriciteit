@@ -5,6 +5,14 @@ public class GroothedenDTO {
     private StroomDTO stroom;
     private WeerstandDTO weerstand;
 
+    GroothedenDTO(){}
+
+    public GroothedenDTO(SpanningDTO spanning, StroomDTO stroom, WeerstandDTO weerstand) {
+        this.spanning = spanning;
+        this.stroom = stroom;
+        this.weerstand = weerstand;
+    }
+
     public SpanningDTO getSpanningDTO() {
         return spanning;
     }

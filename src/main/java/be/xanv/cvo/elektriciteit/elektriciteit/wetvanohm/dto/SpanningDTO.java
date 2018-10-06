@@ -5,6 +5,8 @@ import java.io.Serializable;
 public class SpanningDTO implements Serializable{
     private double volt;
 
+    SpanningDTO(){}
+
     public SpanningDTO(double volt) {
         this.volt = volt;
     }
