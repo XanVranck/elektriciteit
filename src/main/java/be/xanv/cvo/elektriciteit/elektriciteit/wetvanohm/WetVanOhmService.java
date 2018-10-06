@@ -10,6 +10,7 @@ import be.xanv.cvo.elektriciteit.elektriciteit.wetvanohm.dto.WeerstandDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import static be.xanv.cvo.elektriciteit.elektriciteit.grootheden.Spanning.createSpanningFrom;
 import static be.xanv.cvo.elektriciteit.elektriciteit.grootheden.Stroom.createStroomFrom;
 import static be.xanv.cvo.elektriciteit.elektriciteit.grootheden.Weerstand.createWeerstandFrom;
 
@@ -27,11 +28,13 @@ public class WetVanOhmService {
         return groothedenFactory.createSpanningDTO(spanning);
     }
 
-    Stroom berekenAmpere(Spanning spanning, Weerstand weerstand) {
-        return wetVanOhm.berekenAmpere(spanning, weerstand);
+    StroomDTO berekenAmpere(SpanningDTO spanning, WeerstandDTO weerstand) {
+        Stroom stroom = wetVanOhm.berekenAmpere(createSpanningFrom(spanning.getVolt()), createWeerstandFrom(weerstand.getOhm()));
+        return groothedenFactory.createStroomDTO(stroom);
     }
 
-    Weerstand berekenWeerstand(Spanning spanning, Stroom stroom) {
-        return wetVanOhm.berekenWeerstand(spanning, stroom);
+    WeerstandDTO berekenWeerstand(SpanningDTO spanning, StroomDTO stroom) {
+        Weerstand weerstand = wetVanOhm.berekenWeerstand(createSpanningFrom(spanning.getVolt()), createStroomFrom(stroom.getAmpere()));
+        return groothedenFactory.createWeerstandDTO(weerstand);
     }
 }

@@ -43,10 +43,39 @@ public class WetVanOhmControllerTest {
                 .andExpect(content().string(expected));
     }
 
+    @Test
+    public void berekenStroom() throws Exception {
+        String json = getJson();
+        String expected = "{\"ampere\":5.0}";
+
+        this.mockMvc
+                .perform(post("/wetvanohm/ampere")
+                        .contentType(APPLICATION_JSON)
+                        .content(json))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(content().string(expected));
+    }
+
+    @Test
+    public void berekenWeerstand() throws Exception {
+        String json = getJson();
+        String expected = "{\"ohm\":4.0}";
+
+        this.mockMvc
+                .perform(post("/wetvanohm/ohm")
+                        .contentType(APPLICATION_JSON)
+                        .content(json))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(content().string(expected));
+    }
+
     private String getJson() {
         return "{\n" +
                 "  \"spanning\": {\n" +
                 "    \"volt\": 20\n" +
+                "  },\n" +
                 "  \"stroom\": {\n" +
                 "    \"ampere\": 5\n" +
                 "  },\n" +

@@ -1,10 +1,9 @@
 package be.xanv.cvo.elektriciteit.elektriciteit.wetvanohm;
 
-import be.xanv.cvo.elektriciteit.elektriciteit.grootheden.Spanning;
-import be.xanv.cvo.elektriciteit.elektriciteit.grootheden.Stroom;
-import be.xanv.cvo.elektriciteit.elektriciteit.grootheden.Weerstand;
 import be.xanv.cvo.elektriciteit.elektriciteit.wetvanohm.dto.GroothedenDTO;
 import be.xanv.cvo.elektriciteit.elektriciteit.wetvanohm.dto.SpanningDTO;
+import be.xanv.cvo.elektriciteit.elektriciteit.wetvanohm.dto.StroomDTO;
+import be.xanv.cvo.elektriciteit.elektriciteit.wetvanohm.dto.WeerstandDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -32,13 +31,15 @@ public class WetVanOhmController {
 
     @RequestMapping("/ampere")
     @GetMapping
-    Stroom berekenAmpere(Spanning spanning, Weerstand weerstand) {
-        return service.berekenAmpere(spanning, weerstand);
+    public ResponseEntity<StroomDTO> berekenAmpere(@RequestBody GroothedenDTO grootheden) {
+        StroomDTO stroomDTO = service.berekenAmpere(grootheden.getSpanningDTO(), grootheden.getWeerstandDTO());
+        return new ResponseEntity<>(stroomDTO, OK);
     }
 
-    @RequestMapping("/weerstand")
+    @RequestMapping("/ohm")
     @GetMapping
-    Weerstand berekenWeerstand(Spanning spanning, Stroom stroom) {
-        return service.berekenWeerstand(spanning, stroom);
+    ResponseEntity<WeerstandDTO> berekenOhm(@RequestBody GroothedenDTO grootheden) {
+        WeerstandDTO weerstandDTO = service.berekenWeerstand(grootheden.getSpanningDTO(), grootheden.getStroomDTO());
+        return new ResponseEntity<>(weerstandDTO, OK);
     }
 }
